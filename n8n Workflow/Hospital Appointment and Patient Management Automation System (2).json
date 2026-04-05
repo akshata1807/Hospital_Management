@@ -1,0 +1,1234 @@
+{
+  "name": "Hospital Appointment and Patient Management Automation System",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "appointment-booking",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "ecccea5f-2bef-477d-a068-785e1feeb13d",
+      "name": "Receive Appointment from Website",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -448,
+        1400
+      ],
+      "webhookId": "fb8d5758-62a5-4e13-baf0-ae308a4f4ccd"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs",
+          "cachedResultName": "Hospital_Management_System",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gid=0",
+          "cachedResultName": "Appointments",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Appointment_ID",
+              "displayName": "Appointment_ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Patient_ID",
+              "displayName": "Patient_ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Patient_Name",
+              "displayName": "Patient_Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Gmail",
+              "displayName": "Gmail",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Department",
+              "displayName": "Department",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Doctor_Name",
+              "displayName": "Doctor_Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Appointment_Date",
+              "displayName": "Appointment_Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Appointment_Time",
+              "displayName": "Appointment_Time",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Booking_Created_At",
+              "displayName": "Booking_Created_At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "patientId",
+              "displayName": "patientId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "registrationDate",
+              "displayName": "registrationDate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "headers",
+              "displayName": "headers",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "params",
+              "displayName": "params",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "body",
+              "displayName": "body",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "webhookUrl",
+              "displayName": "webhookUrl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "executionMode",
+              "displayName": "executionMode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "49579d2d-ee28-458a-8cc4-bb9321116d52",
+      "name": "Save to Google Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        224,
+        1496
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "NySTz3NmjChU48oq",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"success\": true,\n  \"message\": \"Appointment booked successfully!\"\n}",
+        "options": {}
+      },
+      "id": "0f8ab353-8cdd-4996-bc5d-5f531b5edb64",
+      "name": "Send Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        1496
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "Patient_Name",
+              "value": "={{ $json.body.Patient_Name }}",
+              "type": "string"
+            },
+            {
+              "id": "id-2",
+              "name": "Phone",
+              "value": "={{ $json.body.Phone }}",
+              "type": "string"
+            },
+            {
+              "id": "id-3",
+              "name": "Gmail",
+              "value": "={{ $json.body.Gmail }}",
+              "type": "string"
+            },
+            {
+              "id": "id-4",
+              "name": "Department",
+              "value": "={{ $json.body.Department }}",
+              "type": "string"
+            },
+            {
+              "id": "id-5",
+              "name": "Doctor_Name",
+              "value": "={{ $json.body.Doctor_Name }}",
+              "type": "string"
+            },
+            {
+              "id": "id-6",
+              "name": "Appointment_Date",
+              "value": "={{ $json.body.Appointment_Date }}",
+              "type": "string"
+            },
+            {
+              "id": "id-7",
+              "name": "Appointment_Time",
+              "value": "={{ $json.body.Appointment_Time }}",
+              "type": "string"
+            },
+            {
+              "id": "id-9",
+              "name": "Appointment_ID",
+              "value": "=APT-{{ $now.toFormat('yyyyMMddHHmmss') }}",
+              "type": "string"
+            },
+            {
+              "id": "id-10",
+              "name": "Patient_ID",
+              "value": "TEMP-PAT",
+              "type": "string"
+            },
+            {
+              "id": "id-11",
+              "name": "Status",
+              "value": "Confirmed",
+              "type": "string"
+            },
+            {
+              "id": "id-12",
+              "name": "Booking_Created_At",
+              "value": "={{ $now }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "16c74e36-4b43-421b-a0f6-0b0f5ae5f182",
+      "name": "Extract Appointment Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        1496
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Gmail }}",
+        "subject": "=Appointment Confirmation - {{ $json.Doctor_Name }}",
+        "emailType": "text",
+        "message": "=Dear {{ $json.Patient_Name }},\n\nYour appointment has been successfully booked!\n\nAppointment Details:\n- Doctor: {{ $json.Doctor_Name }}\n- Department: {{ $json.Department }}\n- Date: {{ $json.Appointment_Date }}\n- Time: {{ $json.Appointment_Time }}\n- Appointment ID: {{ $json.Appointment_ID }}\n\nPlease arrive 15 minutes before your scheduled time.\n\nThank you for choosing our hospital.\n\nBest regards,\nHospital Management Team",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "4eb7c5f7-7af2-40e1-bf4d-9a309a6c801e",
+      "name": "Send Confirmation Email to Patient",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        448,
+        1496
+      ],
+      "webhookId": "5c265ea9-ad46-4ff4-90f0-95cee6f2d7b4",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "4WGo3Pix1lAN9DrN",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "id-1",
+              "leftValue": "={{ $('Receive Appointment from Website').item.json.body.Patient_Name }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "9a59af89-cae9-4640-b982-7f7377dbdc57",
+      "name": "Check if Data Received",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -224,
+        1400
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"success\": false,\n  \"error\": \"No appointment data received. Please check your website form is sending data correctly.\"\n}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "2e3311c7-df98-4cb6-b7ed-fb42a8aa0814",
+      "name": "Send Error Response - No Data",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        0,
+        1304
+      ]
+    },
+    {
+      "parameters": {
+        "public": true,
+        "mode": "webhook",
+        "options": {}
+      },
+      "id": "5866dda5-ad8d-4741-a007-e1232dd9097c",
+      "name": "Website Chat Interface",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -448,
+        464
+      ],
+      "webhookId": "c166fe43-7939-4913-8339-ecb9f21d0efb"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a helpful hospital assistant chatbot. You can:\n1. Look up appointment information when users provide their Appointment ID using the Lookup Appointment Tool\n2. Check available appointment slots for doctors using the Check Doctor Slots Tool\n3. Provide general information about the hospital, departments, services, and visiting hours\n\nWhen looking up appointments, provide all details including patient name, doctor, department, date, time, and status.\n\nWhen checking doctor slots:\n- Use the Check Doctor Slots Tool to retrieve ALL appointment slots\n- Filter the results yourself to show only slots for the requested doctor\n- Display available slots (where Status is \"Available\") with date, time, and department\n- If a user asks about a specific doctor, show their available time slots clearly\n\nBe friendly, professional, and concise in your responses."
+        }
+      },
+      "id": "1c01b7f0-18f6-4a67-8aef-c6b7e4bb2cfe",
+      "name": "AI Assistant",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -104,
+        464
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "id": "e5aeea47-7bbe-4835-8a4f-99f739c5f64a",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -224,
+        688
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "IaaNtZM2Ugs376Mq",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "27976c26-7f2f-4ba9-9af5-87c6dee0c835",
+      "name": "Conversation Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -96,
+        688
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "appointment-reschedule",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "7568ba64-d04b-47fd-9b4c-dc8779ed7559",
+      "name": "Receive Reschedule Request",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -448,
+        984
+      ],
+      "webhookId": "dd12898b-2084-4696-8dcd-9f01293248a2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "id-1",
+              "leftValue": "={{ $('Receive Reschedule Request').item.json.body.Appointment_ID || $('Receive Reschedule Request').item.json.body.appointmentId }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            },
+            {
+              "id": "id-2",
+              "leftValue": "={{ $('Receive Reschedule Request').item.json.body.New_Appointment_Date || $('Receive Reschedule Request').item.json.body.newDate }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            },
+            {
+              "id": "id-3",
+              "leftValue": "={{ $('Receive Reschedule Request').item.json.body.New_Appointment_Time || $('Receive Reschedule Request').item.json.body.newTime }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e31acf94-6eec-4c9a-9493-30758a44d70e",
+      "name": "Validate Reschedule Data",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -224,
+        984
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs",
+          "cachedResultName": "Hospital_Management_System",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gid=0",
+          "cachedResultName": "Appointments",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Appointment_ID",
+              "lookupValue": "={{ $json.body.Appointment_ID || $json.body.appointmentId }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b55e4adf-99f7-4bee-8903-6a071b9810e9",
+      "name": "Find Existing Appointment",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        0,
+        888
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "NySTz3NmjChU48oq",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"success\": false,\n  \"error\": \"Missing required fields. Please provide appointmentId (or Appointment_ID), newDate (or New_Appointment_Date), and newTime (or New_Appointment_Time).\"\n}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "3adef3fd-72d5-4464-99a3-6e84f7c6c229",
+      "name": "Send Error - Invalid Data",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        0,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "id-1",
+              "leftValue": "={{ $('Find Existing Appointment').item.json.Appointment_ID }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c2239121-00e9-42bf-ba02-0e409c583899",
+      "name": "Check if Appointment Found",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        888
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs",
+          "cachedResultName": "Hospital_Management_System",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gid=0",
+          "cachedResultName": "Appointments",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Appointment_Date": "={{ $json.Appointment_Date }}",
+            "Appointment_Time": "={{ $json.Appointment_Time }}",
+            "Status": "={{ $json.Status }}",
+            "row_number": 0,
+            "Appointment_ID": "={{ $json.Appointment_ID }}"
+          },
+          "matchingColumns": [
+            "Appointment_ID"
+          ],
+          "schema": [
+            {
+              "id": "Appointment_ID",
+              "displayName": "Appointment_ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Patient_ID",
+              "displayName": "Patient_ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Patient_Name",
+              "displayName": "Patient_Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Gmail",
+              "displayName": "Gmail",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Department",
+              "displayName": "Department",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Doctor_Name",
+              "displayName": "Doctor_Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Appointment_Date",
+              "displayName": "Appointment_Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Appointment_Time",
+              "displayName": "Appointment_Time",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Booking_Created_At",
+              "displayName": "Booking_Created_At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "782bdbad-9b0e-4f3c-bec2-edff1b15f275",
+      "name": "Update Appointment in Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        672,
+        792
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "NySTz3NmjChU48oq",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"success\": false,\n  \"error\": \"Appointment not found. Please check your Appointment ID.\"\n}",
+        "options": {
+          "responseCode": 404
+        }
+      },
+      "id": "05161bb4-e7ca-4682-968a-a5d8b85f0cd5",
+      "name": "Send Error - Not Found",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        448,
+        984
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Merge Reschedule Data').item.json.Gmail }}",
+        "subject": "=Appointment Rescheduled - {{ $('Merge Reschedule Data').item.json.Doctor_Name }}",
+        "emailType": "text",
+        "message": "=Dear {{ $('Merge Reschedule Data').item.json.Patient_Name }},\n\nYour appointment has been successfully rescheduled!\n\nUpdated Appointment Details:\n- Doctor: {{ $('Merge Reschedule Data').item.json.Doctor_Name }}\n- Department: {{ $('Merge Reschedule Data').item.json.Department }}\n- New Date: {{ $('Receive Reschedule Request').item.json.body.New_Appointment_Date }}\n- New Time: {{ $('Receive Reschedule Request').item.json.body.New_Appointment_Time }}\n- Appointment ID: {{ $json.Appointment_ID }}\n\nPlease arrive 15 minutes before your scheduled time.\n\nThank you for choosing our hospital.\n\nBest regards,\nHospital Management Team",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "e75b0e24-6969-4fd3-992d-5167872d7e7b",
+      "name": "Send Reschedule Confirmation Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        896,
+        792
+      ],
+      "webhookId": "f690910e-568a-4a52-b6da-f27438b2039a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "4WGo3Pix1lAN9DrN",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"success\": true,\n  \"message\": \"Appointment rescheduled successfully!\"\n}",
+        "options": {}
+      },
+      "id": "e8854d0d-82e6-41d0-a670-2cad776959c4",
+      "name": "Send Success Response1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        1120,
+        792
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "Appointment_Date",
+              "value": "={{ $('Receive Reschedule Request').item.json.body.New_Appointment_Date || $('Receive Reschedule Request').item.json.body.newDate }}",
+              "type": "string"
+            },
+            {
+              "id": "id-2",
+              "name": "Appointment_Time",
+              "value": "={{ $('Receive Reschedule Request').item.json.body.New_Appointment_Time || $('Receive Reschedule Request').item.json.body.newTime }}",
+              "type": "string"
+            },
+            {
+              "id": "id-3",
+              "name": "Status",
+              "value": "Rescheduled",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "0218bb93-1b27-465d-b4ce-3f77bf0f3d0b",
+      "name": "Merge Reschedule Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        792
+      ]
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Get row(s) in sheet in Google Sheets",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs",
+          "cachedResultName": "Hospital_Management_System",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 605608135,
+          "mode": "list",
+          "cachedResultName": "Doctors",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs/edit#gid=605608135"
+        },
+        "options": {}
+      },
+      "id": "4e7eee97-7e6f-4044-8f84-e5c03d9b0d3c",
+      "name": "Check Doctor Slots Tool",
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        32,
+        688
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "NySTz3NmjChU48oq",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Look up appointment information from Google Sheets using the Appointment ID",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs",
+          "cachedResultName": "Hospital_Management_System",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gid=0",
+          "cachedResultName": "Appointments",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rvCgYszP2SW4edXCN2WjEbpr3XPebJaN4iVVJWExfLs/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Appointment_ID",
+              "lookupValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('appointmentId', 'The appointment ID to look up (e.g., APT-20260330134051)') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7bad9ab7-40de-473a-86df-a60a4934d52d",
+      "name": "Lookup Appointment Tool",
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        160,
+        688
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "NySTz3NmjChU48oq",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Receive Appointment from Website": {
+      "main": [
+        [
+          {
+            "node": "Check if Data Received",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Google Sheet": {
+      "main": [
+        [
+          {
+            "node": "Send Confirmation Email to Patient",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Appointment Fields": {
+      "main": [
+        [
+          {
+            "node": "Save to Google Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Confirmation Email to Patient": {
+      "main": [
+        [
+          {
+            "node": "Send Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check if Data Received": {
+      "main": [
+        [
+          {
+            "node": "Extract Appointment Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Error Response - No Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Website Chat Interface": {
+      "main": [
+        [
+          {
+            "node": "AI Assistant",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Assistant",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Conversation Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Assistant",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Receive Reschedule Request": {
+      "main": [
+        [
+          {
+            "node": "Validate Reschedule Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Reschedule Data": {
+      "main": [
+        [
+          {
+            "node": "Find Existing Appointment",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Error - Invalid Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Existing Appointment": {
+      "main": [
+        [
+          {
+            "node": "Check if Appointment Found",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check if Appointment Found": {
+      "main": [
+        [
+          {
+            "node": "Merge Reschedule Data",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Error - Not Found",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Appointment in Sheet": {
+      "main": [
+        [
+          {
+            "node": "Send Reschedule Confirmation Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Reschedule Confirmation Email": {
+      "main": [
+        [
+          {
+            "node": "Send Success Response1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Reschedule Data": {
+      "main": [
+        [
+          {
+            "node": "Update Appointment in Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Doctor Slots Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Assistant",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lookup Appointment Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Assistant",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "ee8d7ca8-761e-4578-b2d5-e326fe858b11",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5f9f7dff72dac87411b7f0258950f563d06a0e688dbe5a22105e1b7a0ecf5e3d"
+  },
+  "id": "2xZ4OAlQ7z1Scs73",
+  "tags": []
+}
