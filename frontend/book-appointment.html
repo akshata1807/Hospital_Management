@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare | Book Appointment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">
+                    <i data-lucide="heart-pulse" style="width: 20px; height: 20px;"></i>
+                </div>
+                <span class="logo-text">MediCare</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="book-appointment.html">Book Appointment</a>
+                <a href="doctor-slots.html">Doctor Slots</a>
+                <a href="reschedule.html">Reschedule</a>
+                <a href="chatbot.html" class="nav-chat-btn">
+                    <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i> AI Chat
+                </a>
+            </nav>
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <nav id="mobile-nav" class="mobile-nav">
+            <div class="mobile-nav-links">
+                <a href="index.html"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+                <a href="book-appointment.html"><i data-lucide="calendar"></i> Book Appointment</a>
+                <a href="doctor-slots.html"><i data-lucide="users"></i> Doctor Slots</a>
+                <a href="reschedule.html"><i data-lucide="clock"></i> Reschedule</a>
+                <a href="chatbot.html"><i data-lucide="message-circle"></i> AI Chatbot</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content container">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Book an Appointment</h1>
+                <p class="text-muted">Fill out the form below to schedule a visit with one of our specialists.</p>
+            </div>
+
+            <div class="card">
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label class="form-label" for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="gmail">Email Address</label>
+                        <input type="email" id="gmail" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="department">Select Department</label>
+                        <select id="department" class="form-control" required>
+                            <option value="">-- Choose a Department --</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="dermatology">Dermatology</option>
+                            <option value="ent">ENT</option>
+                            <option value="general-medicine">General Medicine</option>
+                            <option value="gynecology">Gynecology</option>
+                            <option value="neurology">Neurology</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="doctor_name">Doctor Name</label>
+                        <select id="doctor_name" class="form-control" required disabled>
+                            <option value="">-- First Choose a Department --</option>
+                        </select>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="form-group" style="flex: 1;">
+                            <label class="form-label" for="appointment_date">Preferred Date</label>
+                            <input type="date" id="appointment_date" class="form-control" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label class="form-label" for="appointment_time">Preferred Time</label>
+                            <input type="time" id="appointment_time" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="reason">Reason for Visit</label>
+                        <textarea id="reason" class="form-control" rows="3" placeholder="Briefly describe your symptoms or reason for visit..."></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="btn btn-primary btn-block" style="margin-top: 1rem;">
+                        <span id="btn-spinner" class="spinner"></span>
+                        <span id="btn-text">Book Appointment</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

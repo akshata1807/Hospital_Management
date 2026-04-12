@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare | Reschedule Appointment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">
+                    <i data-lucide="heart-pulse" style="width: 20px; height: 20px;"></i>
+                </div>
+                <span class="logo-text">MediCare</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="book-appointment.html">Book Appointment</a>
+                <a href="doctor-slots.html">Doctor Slots</a>
+                <a href="reschedule.html">Reschedule</a>
+                <a href="chatbot.html" class="nav-chat-btn">
+                    <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i> AI Chat
+                </a>
+            </nav>
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <nav id="mobile-nav" class="mobile-nav">
+            <div class="mobile-nav-links">
+                <a href="index.html"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+                <a href="book-appointment.html"><i data-lucide="calendar"></i> Book Appointment</a>
+                <a href="doctor-slots.html"><i data-lucide="users"></i> Doctor Slots</a>
+                <a href="reschedule.html"><i data-lucide="clock"></i> Reschedule</a>
+                <a href="chatbot.html"><i data-lucide="message-circle"></i> AI Chatbot</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content container">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Reschedule Appointment</h1>
+                <p class="text-muted">Enter your appointment details to find and reschedule it.</p>
+            </div>
+
+            <div class="card">
+                <form id="reschedule-form">
+                    <div class="form-group">
+                        <label class="form-label" for="app-id">Appointment ID</label>
+                        <input type="text" id="app-id" class="form-control" placeholder="e.g. APPT-12345" required>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="form-group" style="flex: 1;">
+                            <label class="form-label" for="new-date">New Date</label>
+                            <input type="date" id="new-date" class="form-control" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label class="form-label" for="new-time">New Time</label>
+                            <input type="time" id="new-time" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="reschedule-btn" class="btn btn-primary btn-block" style="margin-top: 1rem;">
+                        <span id="reschedule-spinner" class="spinner"></span>
+                        <span id="reschedule-text">Find Appointment</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

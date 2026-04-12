@@ -6,6 +6,8 @@ from database import appointments_collection, client
 from dotenv import load_dotenv
 import os
 import requests
+import webbrowser
+import threading
 from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
@@ -16,6 +18,17 @@ RESCHEDULE_WEBHOOK_URL = os.getenv("RESCHEDULE_WEBHOOK_URL")
 CHATBOT_WEBHOOK_URL = os.getenv("CHATBOT_WEBHOOK_URL")
 
 app = FastAPI()
+
+@app.on_event("startup")
+def open_browser():
+    def _open():
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        frontend_path = os.path.join(project_root, "frontend", "index.html")
+        frontend_uri = "file:///" + frontend_path.replace("\\", "/")
+        webbrowser.open(frontend_uri)
+    
+    # Wait slightly to ensure the backend server has started successfully before opening the frontend.
+    threading.Timer(1.5, _open).start()
 
 app.add_middleware(
     CORSMiddleware,
@@ -80,16 +93,25 @@ def book_appointment(data: AppointmentRequest):
 
         webhook_data = {
             "Patient_Name": data.patient_name,
+            "patient_name": data.patient_name,
             "Phone": data.phone,
+            "phone": data.phone,
             "Email": data.gmail,
+            "email": data.gmail,
             "Gmail": data.gmail,
             "gmail": data.gmail,
             "Department": data.department,
+            "department": data.department,
             "Doctor_Name": data.doctor_name,
+            "doctor_name": data.doctor_name,
             "Appointment_Date": data.appointment_date,
+            "appointment_date": data.appointment_date,
             "Appointment_Time": data.appointment_time,
+            "appointment_time": data.appointment_time,
             "Notes": data.notes,
-            "Appointment_ID": appointment_id
+            "notes": data.notes,
+            "Appointment_ID": appointment_id,
+            "appointment_id": appointment_id
         }
 
         response = requests.post(
@@ -140,14 +162,21 @@ def reschedule_appointment(data: RescheduleRequest):
             webhook_data = {
                 "Appointment_ID": data.appointment_id,
                 "appointmentId": data.appointment_id,
+                "appointment_id": data.appointment_id,
                 "New_Appointment_Date": data.new_appointment_date,
                 "newDate": data.new_appointment_date,
+                "new_appointment_date": data.new_appointment_date,
                 "New_Appointment_Time": data.new_appointment_time,
                 "newTime": data.new_appointment_time,
+                "new_appointment_time": data.new_appointment_time,
                 "Patient_Name": existing_appointment.get("patient_name"),
+                "patient_name": existing_appointment.get("patient_name"),
                 "Doctor_Name": existing_appointment.get("doctor_name"),
+                "doctor_name": existing_appointment.get("doctor_name"),
                 "Department": existing_appointment.get("department"),
+                "department": existing_appointment.get("department"),
                 "Email": existing_appointment.get("gmail"),
+                "email": existing_appointment.get("gmail"),
                 "Gmail": existing_appointment.get("gmail"),
                 "gmail": existing_appointment.get("gmail")
             }
@@ -155,10 +184,13 @@ def reschedule_appointment(data: RescheduleRequest):
             webhook_data = {
                 "Appointment_ID": data.appointment_id,
                 "appointmentId": data.appointment_id,
+                "appointment_id": data.appointment_id,
                 "New_Appointment_Date": data.new_appointment_date,
                 "newDate": data.new_appointment_date,
+                "new_appointment_date": data.new_appointment_date,
                 "New_Appointment_Time": data.new_appointment_time,
-                "newTime": data.new_appointment_time
+                "newTime": data.new_appointment_time,
+                "new_appointment_time": data.new_appointment_time
             }
 
         response = requests.post(
@@ -195,7 +227,10 @@ def chat_with_bot(data: ChatRequest):
     try:
         payload = {
             "chatInput": data.message,
-            "sessionId": data.session_id
+            "chat_input": data.message,
+            "message": data.message,
+            "sessionId": data.session_id,
+            "session_id": data.session_id
         }
 
         response = requests.post(

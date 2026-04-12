@@ -1,29 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare | Dashboard</title>
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
 
-    <!-- Updated Title -->
-    <title>Hospital Appointment Management System</title>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container nav-wrapper">
+            <!-- Logo -->
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">
+                    <i data-lucide="heart-pulse" style="width: 20px; height: 20px;"></i>
+                </div>
+                <span class="logo-text">MediCare</span>
+            </a>
 
-    <meta name="description" content="Book and manage hospital appointments easily with our smart appointment system." />
-    <meta name="author" content="Akshata Lonari" />
+            <!-- Desktop Nav -->
+            <nav class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="book-appointment.html">Book Appointment</a>
+                <a href="doctor-slots.html">Doctor Slots</a>
+                <a href="reschedule.html">Reschedule</a>
+                <a href="chatbot.html" class="nav-chat-btn">
+                    <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i> AI Chat
+                </a>
+            </nav>
 
-    <!-- Open Graph (for sharing links) -->
-    <meta property="og:title" content="Hospital Appointment Management System" />
-    <meta property="og:description" content="Book and manage hospital appointments easily with our smart system." />
-    <meta property="og:type" content="website" />
-    
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@AkshataLonari" />
-   
-  </head>
+        <!-- Mobile Nav Menu -->
+        <nav id="mobile-nav" class="mobile-nav">
+            <div class="mobile-nav-links">
+                <a href="index.html"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+                <a href="book-appointment.html"><i data-lucide="calendar"></i> Book Appointment</a>
+                <a href="doctor-slots.html"><i data-lucide="users"></i> Doctor Slots</a>
+                <a href="reschedule.html"><i data-lucide="clock"></i> Reschedule</a>
+                <a href="chatbot.html"><i data-lucide="message-circle"></i> AI Chatbot</a>
+            </div>
+        </nav>
+    </header>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Main Content -->
+    <main class="main-content container">
+        <!-- Hero Section -->
+        <div style="background: var(--gradient-hero); color: white; padding: 3rem 2rem; border-radius: var(--radius-xl); margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1rem; box-shadow: var(--shadow-lg);">
+            <h1 style="font-size: 2.5rem; color: white;">Welcome to MediCare</h1>
+            <p style="font-size: 1.125rem; max-width: 600px; opacity: 0.9;">Your trusted hospital management platform. Book appointments, consult doctors, and manage your health — all in one place.</p>
+            <div>
+                <a href="book-appointment.html" class="btn" style="background: white; color: var(--color-primary); margin-top: 1rem;">
+                    Book an Appointment <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Dashboard Feature Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            
+            <!-- Feature 1 -->
+            <a href="book-appointment.html" class="card" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(99, 102, 241, 0.1); color: var(--color-primary); display: flex; align-items: center; justify-content: center;">
+                    <i data-lucide="calendar"></i>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 0.25rem;">Book Appointment</h3>
+                    <p class="text-muted" style="font-size: 0.875rem;">Schedule a new appointment with our specialists</p>
+                </div>
+            </a>
+
+            <!-- Feature 2 -->
+            <a href="doctor-slots.html" class="card" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(14, 165, 233, 0.1); color: var(--color-accent); display: flex; align-items: center; justify-content: center;">
+                    <i data-lucide="users"></i>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 0.25rem;">Doctor Slots</h3>
+                    <p class="text-muted" style="font-size: 0.875rem;">View available doctors and their schedules</p>
+                </div>
+            </a>
+
+            <!-- Feature 3 -->
+            <a href="reschedule.html" class="card" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(245, 158, 11, 0.1); color: var(--color-warning); display: flex; align-items: center; justify-content: center;">
+                    <i data-lucide="clock"></i>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 0.25rem;">Reschedule</h3>
+                    <p class="text-muted" style="font-size: 0.875rem;">Change your existing appointment date & time</p>
+                </div>
+            </a>
+
+            <!-- Feature 4 -->
+            <a href="chatbot.html" class="card" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(168, 85, 247, 0.1); color: #a855f7; display: flex; align-items: center; justify-content: center;">
+                    <i data-lucide="message-circle"></i>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 0.25rem;">AI Health Assistant</h3>
+                    <p class="text-muted" style="font-size: 0.875rem;">Get instant answers to your health queries</p>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+</body>
 </html>

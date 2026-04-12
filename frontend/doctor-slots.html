@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare | Doctor Slots</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">
+                    <i data-lucide="heart-pulse" style="width: 20px; height: 20px;"></i>
+                </div>
+                <span class="logo-text">MediCare</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="book-appointment.html">Book Appointment</a>
+                <a href="doctor-slots.html">Doctor Slots</a>
+                <a href="reschedule.html">Reschedule</a>
+                <a href="chatbot.html" class="nav-chat-btn">
+                    <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i> AI Chat
+                </a>
+            </nav>
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <nav id="mobile-nav" class="mobile-nav">
+            <div class="mobile-nav-links">
+                <a href="index.html"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+                <a href="book-appointment.html"><i data-lucide="calendar"></i> Book Appointment</a>
+                <a href="doctor-slots.html"><i data-lucide="users"></i> Doctor Slots</a>
+                <a href="reschedule.html"><i data-lucide="clock"></i> Reschedule</a>
+                <a href="chatbot.html"><i data-lucide="message-circle"></i> AI Chatbot</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem;">Available Doctors</h1>
+            <p class="text-muted">Browse our specialists and view their available time slots.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
+            
+            <!-- Doctor DOC-001 -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="user" style="color: var(--text-muted); width: 32px; height: 32px;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.25rem;">Dr. Sarah Johnson</h3>
+                        <p class="text-primary" style="font-weight: 500; font-size: 0.875rem;">Cardiology</p>
+                        <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.25rem;">Room: 101 | Fee: 500</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.75rem;">Availability: Mon-Fri</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="form-control" style="background: #f8fafc; border: 1px solid #e2e8f0; width: auto; padding: 0.5rem; text-align: center; border-radius: var(--radius-md); font-size: 0.875rem; color: #64748b;">09:00 - 17:00</span>
+                    </div>
+                </div>
+                <a href="book-appointment.html" class="btn btn-primary btn-block" style="margin-top: 1.5rem;">Book Appointment</a>
+            </div>
+
+            <!-- Doctor DOC-002 -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="user" style="color: var(--text-muted); width: 32px; height: 32px;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.25rem;">Dr. Maria Garcia</h3>
+                        <p class="text-primary" style="font-weight: 500; font-size: 0.875rem;">Dermatology</p>
+                        <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.25rem;">Room: 102 | Fee: 400</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.75rem;">Availability: Mon-Fri</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="form-control" style="background: #f8fafc; border: 1px solid #e2e8f0; width: auto; padding: 0.5rem; text-align: center; border-radius: var(--radius-md); font-size: 0.875rem; color: #64748b;">11:00 - 19:00</span>
+                    </div>
+                </div>
+                <a href="book-appointment.html" class="btn btn-primary btn-block" style="margin-top: 1.5rem;">Book Appointment</a>
+            </div>
+
+            <!-- Doctor DOC-003 -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="user" style="color: var(--text-muted); width: 32px; height: 32px;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.25rem;">Dr. Robert Taylor</h3>
+                        <p class="text-primary" style="font-weight: 500; font-size: 0.875rem;">ENT</p>
+                        <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.25rem;">Room: 103 | Fee: 450</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.75rem;">Availability: Mon-Sat</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="form-control" style="background: #f8fafc; border: 1px solid #e2e8f0; width: auto; padding: 0.5rem; text-align: center; border-radius: var(--radius-md); font-size: 0.875rem; color: #64748b;">10:00 - 18:00</span>
+                    </div>
+                </div>
+                <a href="book-appointment.html" class="btn btn-primary btn-block" style="margin-top: 1.5rem;">Book Appointment</a>
+            </div>
+
+            <!-- Doctor DOC-004 -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="user" style="color: var(--text-muted); width: 32px; height: 32px;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.25rem;">Dr. David Lee</h3>
+                        <p class="text-primary" style="font-weight: 500; font-size: 0.875rem;">General Medicine</p>
+                        <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.25rem;">Room: 104 | Fee: 300</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.75rem;">Availability: Mon-Sun</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="form-control" style="background: #f8fafc; border: 1px solid #e2e8f0; width: auto; padding: 0.5rem; text-align: center; border-radius: var(--radius-md); font-size: 0.875rem; color: #64748b;">08:00 - 20:00</span>
+                    </div>
+                </div>
+                <a href="book-appointment.html" class="btn btn-primary btn-block" style="margin-top: 1.5rem;">Book Appointment</a>
+            </div>
+
+            <!-- Doctor DOC-005 -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="user" style="color: var(--text-muted); width: 32px; height: 32px;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.25rem;">Dr. Lisa Anderson</h3>
+                        <p class="text-primary" style="font-weight: 500; font-size: 0.875rem;">Gynecology</p>
+                        <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.25rem;">Room: 105 | Fee: 500</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.75rem;">Availability: Mon-Fri</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="form-control" style="background: #f8fafc; border: 1px solid #e2e8f0; width: auto; padding: 0.5rem; text-align: center; border-radius: var(--radius-md); font-size: 0.875rem; color: #64748b;">09:00 - 17:00</span>
+                    </div>
+                </div>
+                <a href="book-appointment.html" class="btn btn-primary btn-block" style="margin-top: 1.5rem;">Book Appointment</a>
+            </div>
+
+            <!-- Doctor DOC-006 -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="user" style="color: var(--text-muted); width: 32px; height: 32px;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.25rem;">Dr. Michael Chen</h3>
+                        <p class="text-primary" style="font-weight: 500; font-size: 0.875rem;">Neurology</p>
+                        <p class="text-muted" style="font-size: 0.75rem; margin-top: 0.25rem;">Room: 106 | Fee: 600</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.75rem;">Availability: Mon-Sat</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="form-control" style="background: #f8fafc; border: 1px solid #e2e8f0; width: auto; padding: 0.5rem; text-align: center; border-radius: var(--radius-md); font-size: 0.875rem; color: #64748b;">10:00 - 18:00</span>
+                    </div>
+                </div>
+                <a href="book-appointment.html" class="btn btn-primary btn-block" style="margin-top: 1.5rem;">Book Appointment</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

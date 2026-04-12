@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare | AI Chatbot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">
+                    <i data-lucide="heart-pulse" style="width: 20px; height: 20px;"></i>
+                </div>
+                <span class="logo-text">MediCare</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="book-appointment.html">Book Appointment</a>
+                <a href="doctor-slots.html">Doctor Slots</a>
+                <a href="reschedule.html">Reschedule</a>
+                <a href="chatbot.html" class="nav-chat-btn active">
+                    <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i> AI Chat
+                </a>
+            </nav>
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <nav id="mobile-nav" class="mobile-nav">
+            <div class="mobile-nav-links">
+                <a href="index.html"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+                <a href="book-appointment.html"><i data-lucide="calendar"></i> Book Appointment</a>
+                <a href="doctor-slots.html"><i data-lucide="users"></i> Doctor Slots</a>
+                <a href="reschedule.html"><i data-lucide="clock"></i> Reschedule</a>
+                <a href="chatbot.html" class="active"><i data-lucide="message-circle"></i> AI Chatbot</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content container">
+        <div style="max-width: 800px; margin: 0 auto; height: 100%;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">AI Health Assistant</h1>
+                <p class="text-muted">Get instant answers to your health queries and administrative questions.</p>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="chat-bubble bot">
+                        Hello! I am the MediCare AI Assistant. How can I help you today?
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" class="form-control" placeholder="Type your message..." style="flex: 1;" onkeypress="if(event.key === 'Enter') document.getElementById('chat-send-btn').click();">
+                    <button class="btn btn-primary" id="chat-send-btn">
+                        <i data-lucide="send" style="width: 18px; height: 18px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const input = document.getElementById("chat-input");
+            const sendBtn = document.getElementById("chat-send-btn");
+            const messages = document.getElementById("chat-messages");
+
+            sendBtn.addEventListener("click", () => {
+                const text = input.value.trim();
+                if (!text) return;
+
+                // Add user message
+                const userBubble = document.createElement("div");
+                userBubble.className = "chat-bubble user";
+                userBubble.textContent = text;
+                messages.appendChild(userBubble);
+
+                input.value = "";
+                messages.scrollTop = messages.scrollHeight;
+
+                // Add bot response (mock)
+                setTimeout(() => {
+                    const botBubble = document.createElement("div");
+                    botBubble.className = "chat-bubble bot";
+                    botBubble.textContent = "Please wait, our system is currently in offline mode. For accurate medical advice, please consult one of our certified doctors.";
+                    messages.appendChild(botBubble);
+                    messages.scrollTop = messages.scrollHeight;
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
